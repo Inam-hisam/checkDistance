@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cordinate Geamitry</title><style>
+  #Doori{
+    padding: 15px;
+    margin: 8px;
+    background-color: lightskyblue;
+    height: auto;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  #Doori input{
+    width: 25px;
+  }
+  button{
+    height: 35px;
+    width: 120px;
+    margin-top: 20px;
+    margin-left: 80px;
+    background-color: blue;
+    color : white;
+    border: 3px solid black;
+    border-radius:5px;
+    font-size: 18px;
+  }
+  button:hover{
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+  }
+  #secf{
+    margin-left: 0px;
+  }
+  #sec2{
+    margin-right: 0px;
+  }
+  p{
+    color: red;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="Doori">
+<h3> find distance between two points</h3>
+    <p>Don't input more than four or less than four!</p>
+x<sub>1</sub> <input type="text" id="x1">
+ y<sub>1</sub> <input type="text" id="y1">,
+   
+ x<sub>2</sub><input type="text" id="x2">y<sub>2</sub><input type="text" id="y2">
+ =<input type="number" id="equal">
+  <button onclick="Answer()">Find Answer</button>
+  <h3 id="return"></h3>
+  <h3 id="res"></h3>
+  </div>
+  <div id="vivajan"></div>
+  <div id="tribhuj">
+   <!-- <input type="number" id="x1">
+    <input type="number" id="y1">
+    <input type="number" id="x2">
+    <input type="number" id="y2">
+    <input type="number" id="x3"> 
+    <input type="number" id="y3">
+    -->
+  </div>
+  
+  <script>
+  function Answer(){
+    var x1 = document.getElementById('x1').value;
+    var x2 = document.getElementById('x2').value;
+    var y1 = document.getElementById('y1').value ;
+    var y2 = document.getElementById('y2').value;
+    var equal = document.getElementById('equal').value;
+    var a = x2-x1;
+    var a1 = a*a;
+    var b = y2-y1;
+    var b1 = b*b;
+    var f = parseInt(a1)+parseInt(b1);
+    var fd = Math.sqrt(f);X5
+
+    //first case of X2
+    var X2 = equal*equal;
+    var X3 = parseInt(X2)-parseInt(b1);
+    var X4 = Math.sqrt(X3);
+    var X5 = parseInt(X4)+parseInt(x1);
+    
+    //case of X1 
+    var fx1 = parseInt(x2)-parseInt(X4);
+    
+    //case of Y2
+    
+    var Y2 = parseInt(X2)-parseInt(a1);
+    var Y3 = Math.sqrt(Y2);
+    var Y4 = parseInt(Y3)+parseInt(y1);
+    //case of Y1 
+    var fy1 = parseInt(y2)-parseInt(Y3);
+    
+    if(x1==0&&x2==0&&y1==0&&y2==0){
+      document.getElementById('return').innerText = 'Please Give Four Inputs!';
+    }
+    else if(x1==""&&y1=="" || y1==""&&x2=="" || x2==""&&y2=="" || y2==""&&equal=="" || x1==""&&x2=="" || x1==""&&y2=="" ||x1==""&&equal=="" || y1==""&&y2=="" || y1==""&&equal=="" || x2==""&&equal==""){
+      document.getElementById('return').innerText = 'please Give four Inputs';
+    }
+    else if(x1==""){
+          document.getElementById('return').innerText = 'Given input is : '+'a('+'x'+','+y1+')'+'   b('+x2+','+y2+') = '+equal+' unit';
+    
+    document.getElementById('res').innerText ='x1 = '+ fx1;
+    }
+    else if(y1==""){
+          document.getElementById('return').innerText = 'Given input is : '+'a('+x1+','+'y'+')'+'   b('+x2+','+y2+') = '+unit+ ' unit';
+    
+    document.getElementById('res').innerText ='y = '+ fy1;
+    } else if(x2==""){
+          document.getElementById('return').innerText = 'Given input is : '+'a('+x1+','+y1+')'+'   b('+'x'+','+y2+') = '+equal +' unit';
+    
+    document.getElementById('res').innerText ='x = '+ X5;
+    }else if(y2==""){
+          document.getElementById('return').innerText = 'Given input is : '+'a('+x1+','+y1+')'+'   b('+x2+','+'y'+') = '+equal+ ' unit';
+    
+    document.getElementById('res').innerText ='y = '+Y4;
+    }
+    else{
+       document.getElementById('return').innerText = 'Given input is : '+'a('+x1+','+y1+')'+'   b('+x2+','+y2+')';
+    
+    document.getElementById('res').innerText = 'Distance is : '+fd + ' unit' ;
+    }
+    }
+  </script>
+
+</body>
+
+</html>
